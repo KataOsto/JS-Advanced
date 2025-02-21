@@ -31,4 +31,12 @@ console.log('Hello World');
 
  // 4 - Course Structure
 
- 
+ // Outline
+
+ //Objects - fundation of object oriented programing
+ //Prototypes - 
+ //Prototypical Inheritance - 
+ //ES6 Classes -
+ //Modules
+
+
