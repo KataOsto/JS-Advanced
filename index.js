@@ -21,3 +21,14 @@
 //Polymorphism - Polimorfizm - kluczowa koncepcja, która zwiększa skalowalność kodu, możliwość ponownego użycia i łatwość utrzymania . 
                             // Umożliwia programistom tworzenie kodu, który może dostosowywać się do różnych typów danych i obiektów 
                             // za pośrednictwem wspólnego interfejsu.
+
+
+ // 3 - Setting Up the Development Environment  
+ 
+ // Extensions - Live Server
+
+console.log('Hello World');
+
+ // 4 - Course Structure
+
+ 
