@@ -7,9 +7,9 @@
                             // używane do reprezentowania złożonych struktur danych, takich jak obiekty, tablice, 
                             // funkcje, a nawet wyrażenia regularne.
 
+                            
 // {}  - object literal syntax - wyrażenie literału obiektów
-
-
+/*
  const circle = {
     radius: 1,                      // radius - propertis - właściwości
     location: {                     // location - propertis - właściwości
@@ -22,5 +22,23 @@
  };    
 
  circle.draw();
- 
+ */
+
+
+// 3 - Factoris
+
+// If an objesct has one or more methods we say that object has  'BEHAVIOR'
+
+// Factory Function
+function createCircle(radius) {
+    return {
+       radius, 
+       draw: function() {
+        console.log('draw');
+       }                    
+    };    
+}
+
+const circle = createCircle(1);
+ circle.draw();
  
