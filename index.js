@@ -26,9 +26,8 @@
 
 
 // 3 - Factoris
-
 // If an objesct has one or more methods we say that object has  'BEHAVIOR'
-
+/*
 // Factory Function
 function createCircle(radius) {
     return {
@@ -40,5 +39,17 @@ function createCircle(radius) {
 }
 
 const circle = createCircle(1);
- circle.draw();
- 
+circle.draw();
+*/
+
+
+// 4 Constructors
+
+// Constructor Function
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+const another = new Circle(1)
