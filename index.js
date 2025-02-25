@@ -72,7 +72,7 @@ new Number(); // 1, 2, 3, ...
 
 
 // 6 - Functions are Objects
-
+/*
 // In Java sctipt functions are objects
 function Circle(radius) {
     this.radius = radius;
@@ -84,3 +84,31 @@ Circle.call({}, 1)   // Call method
 Circle.apply({}, [1, 2, 3]);       // Apply method
 
 const another = new Circle(1);
+*/
+
+
+// 7 - Value vs Reference Types
+
+// Value Types - Calld primitives
+// Numbers, String, Boolean, Symbol, undefined, null
+
+// Reference Types - 
+// Object, Function, Array
+
+//Example 1
+// Defining 2 primitives
+let x = 10;
+let y = x;
+
+// Changing the value x to -> 20
+x = 20;
+
+//Example 2
+// When we use an object, that object is not stord in this variable
+// That object is tord somewhere else in the memory, and the adress of that memory location is stord inside that memory variable
+let x = {value: 10};
+let y = x;
+
+x.value = 20;
+
+//Example 3
