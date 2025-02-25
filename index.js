@@ -58,10 +58,29 @@ const another = new Circle(1)
 
 // 5 - Constructor Property - właściwość konstruktora
 
-// Konstruktor to specjalna funkcja, która tworzy i inicjuje obiekt instancji klasy .
+// Every object in JavaScript has a property called "Constructor" 
+// and references the function that was used to construct or create an object.
+// 
+// // Konstruktor to specjalna funkcja, która tworzy i inicjuje obiekt instancji klasy .
 // W JavaScript konstruktor jest wywoływany, gdy obiekt jest tworzony za pomocą słowa kluczowego new. 
 // Celem konstruktora jest utworzenie nowego obiektu i ustawienie wartości dla wszelkich istniejących właściwości obiektu.
-
+/*
 new String(); // '', "", ``
 new Boolean(); // true,false
 new Number(); // 1, 2, 3, ...
+*/
+
+
+// 6 - Functions are Objects
+
+// In Java sctipt functions are objects
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+Circle.call({}, 1)   // Call method
+Circle.apply({}, [1, 2, 3]);       // Apply method
+
+const another = new Circle(1);
