@@ -94,7 +94,7 @@ const another = new Circle(1);
 
 // Reference Types - 
 // Object, Function, Array
-
+/*
 //Example 1
 // Defining 2 primitives
 let x = 10;
@@ -110,5 +110,26 @@ let x = {value: 10};
 let y = x;
 
 x.value = 20;
+*/
 
-//Example 3
+
+// 8 - Adding or Removing Properties
+
+function Circle(radius) {
+    this.radius = radius:
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(10);
+
+// user.token - add token property
+circle.location = {x: 1};   // adding a new property by the dot notation "."
+//or we can use
+circle['location'] = {x: 1};  // adding a new property by the brackett notation "[]", god to use when we want to dynamiclly access a property name.
+
+
+delete circle.location;  // Removing propertis by the dot notation "."
+//or we can use
+delete circle['location'];  // Removing propertis by the brackett notation "[]"
