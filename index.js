@@ -114,7 +114,7 @@ x.value = 20;
 
 
 // 8 - Adding or Removing Properties
-
+/*
 function Circle(radius) {
     this.radius = radius:
     this.draw = function() {
@@ -133,3 +133,21 @@ circle['location'] = {x: 1};  // adding a new property by the brackett notation 
 delete circle.location;  // Removing propertis by the dot notation "."
 //or we can use
 delete circle['location'];  // Removing propertis by the brackett notation "[]"
+*/
+
+// 9 - Enumerating Properties
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(10);
+
+for (let key in circle)  {   //Using the for in loop, the key will hold the value of one key in this object
+    if (typeof circle[key] !== 'function')    // If we want to access ony the properties and noot the method?
+    console.log(key, circle[key]);  //We can use the brackett notation "[]" accesss a member
+}
+
