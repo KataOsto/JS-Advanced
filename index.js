@@ -136,7 +136,7 @@ delete circle['location'];  // Removing propertis by the brackett notation "[]"
 */
 
 // 9 - Enumerating Properties
-
+/*
 function Circle(radius) {
     this.radius = radius;
     this.draw = function() {
@@ -150,4 +150,22 @@ for (let key in circle)  {   //Using the for in loop, the key will hold the valu
     if (typeof circle[key] !== 'function')    // If we want to access ony the properties and noot the method?
     console.log(key, circle[key]);  //We can use the brackett notation "[]" accesss a member
 }
+*/
 
+
+// 10 - Abstraction - Hide the details - show the essentials
+// define a new method
+function Circle(radius) {
+    this.radius = radius;
+    this.defaultLocation = { x: 0, y: 0 };  // define another property called defaultLocation
+    this.computeOptimumLocation = function(factory) {
+        // ...
+    }
+    this.draw = function() {
+        this.computeOptimumLocation();
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(10);
+circle.draw();
