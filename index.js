@@ -154,6 +154,7 @@ for (let key in circle)  {   //Using the for in loop, the key will hold the valu
 
 
 // 10 - Abstraction - Hide the details - show the essentials
+/*
 // define a new method
 function Circle(radius) {
     this.radius = radius;
@@ -163,6 +164,29 @@ function Circle(radius) {
     }
     this.draw = function() {
         this.computeOptimumLocation();
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(10);
+circle.draw();
+*/
+
+
+// 11 - Private Propertes and Methodes
+
+
+
+function Circle(radius) { 
+    this.radius = radius;
+
+    let defaultLocation = { x: 0, y: 0 };  //change to a local variable
+
+    let computeOptimumLocation = function(factor) {     // change to a privet method
+        // ...
+    }
+    this.draw = function() {        //Clousere - determines what varibles will be accessible to an inenr function
+        computeOptimumLocation(0.1);
         console.log('draw');
     }
 }
