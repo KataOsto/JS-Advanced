@@ -174,9 +174,7 @@ circle.draw();
 
 
 // 11 - Private Propertes and Methodes
-
-
-
+/*
 function Circle(radius) { 
     this.radius = radius;
 
@@ -192,4 +190,35 @@ function Circle(radius) {
 }
 
 const circle = new Circle(10);
+circle.draw();
+*/
+
+
+// 12 - Getters and Setters
+
+function Circle(radius) { 
+    this.radius = radius;
+
+    let defaultLocation = { x: 0, y: 0 };  
+   
+    this.getDefaultLocation = function() {  //inner function
+        return defaultLocation;
+    }
+    this.draw = function() {        
+        console.log('draw');
+    }
+    Object.defineProperty(this, 'defaultLocation', {  //'defaultLocation'  read only property
+        get: function() {           //inner function
+            return defaultLocation; //Clousere
+        },          // a another key value set
+        set: function(value) {
+            if (!value.x || ! value.y)
+                throw new Error('Invalid location');
+            defaultLocation = value;
+        }
+    });
+}
+
+const circle = new Circle(10);
+circle.defaultLocation = 1;
 circle.draw();
