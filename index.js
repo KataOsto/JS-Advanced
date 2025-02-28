@@ -9,3 +9,9 @@
 //          obiekty które dziedziczą jej własności np.cicrle (Nazwana jest Derived/Sub/Child)
 
 // We have to type of Inharatance - Classical and Prototypical
+
+
+// 2 - Prototypes and Prototypical Inheratance
+
+// Prototype is a parent of another object
+
