@@ -1,7 +1,6 @@
 // Prototypes   
 
 // 1 - Inheretance - dziedziczenie
-
 // inheretance is one of core concepts of object-oriented programing rhat enables an 
 //object to take on the properties an methods of another object.
 
@@ -12,6 +11,14 @@
 
 
 // 2 - Prototypes and Prototypical Inheratance
-
 // Prototype is a parent of another object
+
+
+// 3 - Multilevel Inharatance
+
+// Multilevel Inheritance -  In multilevel inheritance, one class inherits the properties of another class, 
+// and other classes inherit current class properties.
+
+// Objects created by a given constructor will have the same prototype.
+
 
