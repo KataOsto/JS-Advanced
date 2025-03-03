@@ -22,3 +22,14 @@
 // Objects created by a given constructor will have the same prototype.
 
 
+// 4 - Property Descriptors
+// Every object property has a set of invisible attributes containing 
+// metadata associated with that property, called "property descriptors." 
+
+//Define a new object
+let person = {name: 'Mosh'};
+let objectBase = Object.getPrototypeOf(person);
+let descriptor = Object.getOwnPropertyDescriptors(objectBase, 'toString'); // it will return an object  call property descriptor
+
+console.log(descriptor);
+
