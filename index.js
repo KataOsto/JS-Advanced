@@ -23,6 +23,7 @@
 
 
 // 4 - Property Descriptors
+/*
 // Every object property has a set of invisible attributes containing 
 // metadata associated with that property, called "property descriptors." 
 
@@ -32,4 +33,22 @@ let objectBase = Object.getPrototypeOf(person);
 let descriptor = Object.getOwnPropertyDescriptors(objectBase, 'toString'); // it will return an object  call property descriptor
 
 console.log(descriptor);
+*/
 
+
+// 5 - Constructor Prototypes
+//the constructor is a function that is used to create an object, while the prototype is an object that contains 
+// properties and methods that are inherited by objects created from a constructor
+
+Object.getPrototypeOf(myObj);
+
+//myObj.__proto__ (parent of myObj)
+//Constructor.prototype ()
+
+function Circle(radius) {
+    this.radius = radius;
+}
+
+Circle.prototype
+
+const circle = new Circle(1);
