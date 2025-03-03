@@ -37,6 +37,7 @@ console.log(descriptor);
 
 
 // 5 - Constructor Prototypes
+/*
 //the constructor is a function that is used to create an object, while the prototype is an object that contains 
 // properties and methods that are inherited by objects created from a constructor
 
@@ -52,3 +53,25 @@ function Circle(radius) {
 Circle.prototype
 
 const circle = new Circle(1);
+*/
+
+
+
+// 6 - Prototype vs Instance Members
+// We have two kindes of properties and methods in JavaScript. 
+
+function Circle(radius) {
+    // Intance members
+    this.radius = radius;
+}
+// Prototypy members
+Circle.prototype.draw = function() {   
+    console.log('draw');
+}
+
+const c1 = new Circle(1);
+const c2 = new Circle(1);
+
+Circle.prototype.toString = function() {
+    return 'Circle with radius ' + this.radius;
+}
