@@ -80,6 +80,7 @@ Circle.prototype.toString = function() {
 
 
 // 7 - Iterating Instance and Prototype Members
+/*
 // Iteration involves looping through the object's properties one by one.
 function Circle(radius) {
     // Intance members
@@ -101,3 +102,14 @@ console.log(Object.keys(c1));
 
 // For in loop returns all members (instance and prototype)
 for (let key in c1) console.log(key);
+*/
+
+
+// 8 - Avoid Extending the Built-in Objects
+
+// JavaScript also has four built-in objects: Array, Date, Math, and String. 
+// Each object has special-purpose properties and methods associated with it. 
+// JavaScript also has constructors for Boolean and Number types.
+
+// Don't modify objects you don't own!
+
