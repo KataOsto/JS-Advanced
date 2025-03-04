@@ -58,6 +58,7 @@ const circle = new Circle(1);
 
 
 // 6 - Prototype vs Instance Members
+/*
 // We have two kindes of properties and methods in JavaScript. 
 
 function Circle(radius) {
@@ -75,3 +76,28 @@ const c2 = new Circle(1);
 Circle.prototype.toString = function() {
     return 'Circle with radius ' + this.radius;
 }
+*/
+
+
+// 7 - Iterating Instance and Prototype Members
+// Iteration involves looping through the object's properties one by one.
+function Circle(radius) {
+    // Intance members
+    this.radius = radius;
+
+    this.move = function() {
+        console.log('move');
+    }
+}
+
+const c1 = new Circle(1);
+
+// Prototypy members
+Circle.prototype.draw = function() {   
+    console.log('draw');
+}
+// Rewturns instance members
+console.log(Object.keys(c1));
+
+// For in loop returns all members (instance and prototype)
+for (let key in c1) console.log(key);
