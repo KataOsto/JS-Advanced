@@ -28,9 +28,9 @@ const x = new Circle(1);
 
 
 // 2 - Reseting the Constructor
-
-
+/*
 // When you reset the prototype, as a best practice, make sure to reset the constructor as well.
+
 function Shape() {
 }
 
@@ -46,6 +46,37 @@ function Circle(radius) {
 // new Circle.prototype.constructor() => new Circle();
 Circle.prototype = Object.create(Shape.prototype);
 Circle.prototype.constructor = Circle;
+
+Circle.prototype.draw = function() {
+    console.log('draw');
+}
+
+const s = new Shape();
+const x = new Circle(1);
+*/
+
+
+// 3 - Calling the Super Constructor
+
+// The super keyword is used to call the constructor of its parent class 
+// to access the parent's properties and methods.
+
+function Shape(color) { // + new paramiter 'Color'
+    this.color = color;
+}
+
+Shape.prototype.duplicated = function() {
+    console.log('duplicated');
+}
+
+function Circle(radius, color) {
+    Shape.call(this, color);
+    this.radius = radius;
+}
+
+Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.constructor = Circle;
+
 Circle.prototype.draw = function() {
     console.log('draw');
 }
