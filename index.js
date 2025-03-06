@@ -57,7 +57,7 @@ const x = new Circle(1);
 
 
 // 3 - Calling the Super Constructor
-
+/*
 // The super keyword is used to call the constructor of its parent class 
 // to access the parent's properties and methods.
 
@@ -82,4 +82,42 @@ Circle.prototype.draw = function() {
 }
 
 const s = new Shape();
-const x = new Circle(1);
+const x = new Circle(1, red);
+*/
+
+
+// 4 - Intermediat Functions Inheritance
+
+function Shape(color) { 
+    this.color = color;
+}
+
+Shape.prototype.duplicated = function() {
+    console.log('duplicated');
+}
+
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
+
+function Circle(radius, color) {
+    Shape.call(this, color);
+
+    this.radius = radius;
+}
+
+extend(Circle, Shape);
+
+Circle.prototype.draw = function() {
+    console.log('draw');
+}
+
+function Square(size) {
+    this.size = size;
+}
+
+extend(Square, Shape);
+
+const s = new Shape();
+const x = new Circle(1, 'red');
