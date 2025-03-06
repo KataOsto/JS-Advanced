@@ -125,7 +125,7 @@ const x = new Circle(1, 'red');
 
 
 // 5 - Method Overriding 
-
+/*
 // Method overriding is a concept tied with inheritance, when a child class inherits some 
 // method from the parent class but redefines it on its on context.
 
@@ -150,6 +150,48 @@ extend(Circle,Shape);
 
 Circle.prototype.duplicate = function() {
     console.log('duplicate circle');
+}
+
+const c = new Circle();
+*/
+
+
+// 6 - Polymorphism
+
+// Polymorphic functions in JavaScript are functions that can accept arguments of different types and
+//  adapt their behavior based on the actual types of the arguments. This flexibility allows the same function
+//  to work with various data types, promoting code reusability and versatility.
+
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
+
+function Shape() {
+
+}
+
+Shape.prototype.duplicate = function() {
+    console.log('duplicate');
+}
+
+function Circle() {
+
+}
+
+extend(Circle,Shape);
+
+Circle.prototype.duplicate = function() {
+    console.log('duplicate circle');
+}
+
+function Square() {
+}
+
+extend(Square,Shape);
+
+Square.prototype.duplicate = function() {
+    console.log('duplicate square');
 }
 
 const c = new Circle();
