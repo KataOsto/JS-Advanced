@@ -87,7 +87,7 @@ const x = new Circle(1, red);
 
 
 // 4 - Intermediat Functions Inheritance
-
+/*
 function Shape(color) { 
     this.color = color;
 }
@@ -121,3 +121,35 @@ extend(Square, Shape);
 
 const s = new Shape();
 const x = new Circle(1, 'red');
+*/
+
+
+// 5 - Method Overriding 
+
+// Method overriding is a concept tied with inheritance, when a child class inherits some 
+// method from the parent class but redefines it on its on context.
+
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
+
+function Shape() {
+
+}
+
+Shape.prototype.duplicate = function() {
+    console.log('duplicate');
+}
+
+function Circle() {
+
+}
+
+extend(Circle,Shape);
+
+Circle.prototype.duplicate = function() {
+    console.log('duplicate circle');
+}
+
+const c = new Circle();
