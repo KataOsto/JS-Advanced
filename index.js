@@ -206,4 +206,46 @@ const c = new Circle();
 // You want to make global changes to derived classes by changing a base class.
 
 
+// 8 - Mixins
 
+// A mixin is a class whose methods are added to, or mixed in, with another class.
+
+
+function mixin(target, ...sources) {
+    Object.assign(target, ...sources);
+}
+
+const canEat = {   //we define one future as an object.
+    eat: function() {
+        this.hunger--;
+        console.log('eating');
+    }
+};
+
+const canWalk = {
+    walk: function() {
+        console.log('walking');
+    }
+};
+
+const canSwim = {
+    swim: function() {
+        console.log('swim');
+    }
+};
+
+function Person() {
+}
+
+mixin(Person.prototype, canEat, canWalk);
+
+const person = new Person();
+console.log(person);
+
+function Goldfish() {
+}
+
+mixin(Goldfish.prototype, canEat, canSwim);
+
+const Goldfish = new Goldfish();
+console.log(goldfish); 
