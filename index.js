@@ -157,7 +157,7 @@ const c = new Circle();
 
 
 // 6 - Polymorphism
-
+/*
 // Polymorphic functions in JavaScript are functions that can accept arguments of different types and
 //  adapt their behavior based on the actual types of the arguments. This flexibility allows the same function
 //  to work with various data types, promoting code reusability and versatility.
@@ -195,3 +195,15 @@ Square.prototype.duplicate = function() {
 }
 
 const c = new Circle();
+*/
+
+// 7 - When to Use Inheritance  - Favor Composision over Inheritance
+
+//Inheritance is a good choice when:
+// Your inheritance hierarchy represents an is-a relationship and not a has-a relationship.
+// You can reuse code from the base classes.
+// You need to apply the same class and methods to different data types.
+// You want to make global changes to derived classes by changing a base class.
+
+
+
