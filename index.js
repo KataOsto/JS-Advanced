@@ -207,7 +207,7 @@ const c = new Circle();
 
 
 // 8 - Mixins
-
+/*
 // A mixin is a class whose methods are added to, or mixed in, with another class.
 
 
@@ -249,3 +249,7 @@ mixin(Goldfish.prototype, canEat, canSwim);
 
 const Goldfish = new Goldfish();
 console.log(goldfish); 
+*/
+
+
+// 9 - Cheat Sheet - 
