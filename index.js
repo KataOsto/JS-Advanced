@@ -67,20 +67,38 @@
                     // można uzyskać dostępu poprzez obiekty instancjonowane, ale można uzyskać do 
                     // nich dostęp poprzez nazwę klasy
 
-class Circle {
-    constructor(radius) {
-        this.radius = radius;
-    }
-//Instance Method
-    draw(){
-    }
-//Static Method
-    static parse(str){
-       const radius = JSON.parse(str).radius; //(JSON) to standardowy format tekstowy do reprezentowania ustrukturyzowanych danych opartych na składni obiektów JavaScript
-        return new Circle(radius);
-    }
-}
+// class Circle {
+//     constructor(radius) {
+//         this.radius = radius;
+//     }
+// //Instance Method
+//     draw(){
+//     }
+// //Static Method
+//     static parse(str){
+//        const radius = JSON.parse(str).radius; //(JSON) to standardowy format tekstowy do reprezentowania ustrukturyzowanych danych opartych na składni obiektów JavaScript
+//         return new Circle(radius);
+//     }
+// }
 
 
-const circle = Circle.parse('{"radius": 1}')
-console.log(circle);
+// const circle = Circle.parse('{"radius": 1}')
+// console.log(circle);
+
+
+
+// 4 - The This Keyword
+
+'use strict';   //„Use strict” to dyrektywa w JavaScript, która włącza tryb ścisły, zwiększając jakość kodu i zapobiegając częstym błędom
+
+const Circle = function() {
+    this.draw = function() {console.log(this);}
+};
+
+const c = new Circle();
+// Method Call
+c.draw();
+
+const draw = c.draw;
+// Function Call
+draw();
