@@ -89,16 +89,38 @@
 
 // 4 - The This Keyword
 
-'use strict';   //„Use strict” to dyrektywa w JavaScript, która włącza tryb ścisły, zwiększając jakość kodu i zapobiegając częstym błędom
+// 'use strict';   //„Use strict” to dyrektywa w JavaScript, która włącza tryb ścisły, zwiększając jakość kodu i zapobiegając częstym błędom
 
-const Circle = function() {
-    this.draw = function() {console.log(this);}
-};
+// const Circle = function() {
+//     this.draw = function() {console.log(this);}
+// };
 
-const c = new Circle();
-// Method Call
-c.draw();
+// const c = new Circle();
+// // Method Call
+// c.draw();
 
-const draw = c.draw;
-// Function Call
-draw();
+// const draw = c.draw;
+// // Function Call
+// draw();
+
+
+// 5 - Private Members Using Symbols
+
+// abstrakcja - ukrywanie częsci watości i metod
+
+//Symbol - primitive called symbol
+const _radius = Symbol();
+const _draw = Symbol();
+
+class Circle {
+    constructor(radius) {
+        this[_radius] = radius;  //_radius - private property
+    }
+    [_draw]() {
+
+    }
+}
+
+const c = new Circle(1);
+const key = Object.getOwnPropertySymbols(c)[0]
+console.log(c[key]);
