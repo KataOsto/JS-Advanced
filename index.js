@@ -134,24 +134,67 @@
 // są słabe - to znaczy, jeśli wszystkie odwołania do klucza zostaną utracone i nie ma już odwołań do wartości - 
 // wartość może zostać poddana garbage collection
 
-const _radius =  new WeakMap();  //private 
-const _move = new WeakMap();
+// const _radius =  new WeakMap();  //private 
+// const _move = new WeakMap();
+
+// class Circle {
+//     constructor (radius) {
+//         _radius.set(this, radius);
+
+//         _move.set(this, () => {
+//             console.log('move', this);
+//         });
+//     }
+
+//     draw() {
+//         _move.get(this)();
+
+//         console.log('draw');
+//     }
+// }
+
+// const c = new Circle(1);
 
 
-class Circle {
-    constructor (radius) {
-        _radius.set(this, radius);
 
-        _move.set(this, () => {
-            console.log('move', this);
-        });
+// 7 - Getters and Setters
+
+// const _radius = new WeakMap();
+
+// class Circle {
+//     constructor(radius) {
+//         _radius.set(this, radius);
+//     }
+
+// //Method
+//     get radius() {
+//         return _radius.get(this);
+//     }
+//     set radius(value) {
+//         if (value <= 0) throw new Error('Inavalid radius') 
+//             _radius.set(this, value);
+//         }
+// }
+
+// const c = new Circle(1);
+
+
+// 8 - Inheritance
+
+// przekazywania cech z rodzica do dziecka, tak aby nowy fragment kodu mógł ponownie wykorzystać i rozbudować cechy istniejącego
+
+
+class Shape {
+    move() {
+        console.log('move');
     }
+}
 
+// aby dziedziczyć properte Shape użwany extends
+class Circle extends Shape {
     draw() {
-        _move.get(this)();
-
         console.log('draw');
     }
 }
 
-const c = new Circle(1);
+const c = new Circle();
