@@ -109,18 +109,49 @@
 // abstrakcja - ukrywanie częsci watości i metod
 
 //Symbol - primitive called symbol
-const _radius = Symbol();
-const _draw = Symbol();
+// const _radius = Symbol();
+// const _draw = Symbol();
+
+// class Circle {
+//     constructor(radius) {
+//         this[_radius] = radius;  //_radius - private property
+//     }
+//     [_draw]() {
+
+//     }
+// }
+
+// const c = new Circle(1);
+// const key = Object.getOwnPropertySymbols(c)[0]
+// console.log(c[key]);
+
+
+// 6 - Private Members Using WeakMaps
+
+
+// WeakMap - Kiedykolwiek chcesz rozszerzyć obiekt, ale nie możesz, ponieważ jest on zapieczętowany - l
+// ub pochodzi z zewnętrznego źródła - WeakMap może zostać zastosowany. WeakMap to mapa (słownik), w której klucze 
+// są słabe - to znaczy, jeśli wszystkie odwołania do klucza zostaną utracone i nie ma już odwołań do wartości - 
+// wartość może zostać poddana garbage collection
+
+const _radius =  new WeakMap();  //private 
+const _move = new WeakMap();
+
 
 class Circle {
-    constructor(radius) {
-        this[_radius] = radius;  //_radius - private property
-    }
-    [_draw]() {
+    constructor (radius) {
+        _radius.set(this, radius);
 
+        _move.set(this, () => {
+            console.log('move', this);
+        });
+    }
+
+    draw() {
+        _move.get(this)();
+
+        console.log('draw');
     }
 }
 
 const c = new Circle(1);
-const key = Object.getOwnPropertySymbols(c)[0]
-console.log(c[key]);
