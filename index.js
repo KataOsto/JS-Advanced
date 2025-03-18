@@ -184,17 +184,36 @@
 // przekazywania cech z rodzica do dziecka, tak aby nowy fragment kodu mógł ponownie wykorzystać i rozbudować cechy istniejącego
 
 
+// class Shape {
+//     move() {
+//         console.log('move');
+//     }
+// }
+
+// // aby dziedziczyć properte Shape użwany extends
+// class Circle extends Shape {
+//     draw() {
+//         console.log('draw');
+//     }
+// }
+
+// const c = new Circle(); 
+
+
+
+// 9 - Method Overriding - Aby zastąpić metodę, nadajemy jej taką samą nazwę i parametry, jak metodzie w superklasie
+
 class Shape {
     move() {
         console.log('move');
     }
 }
 
-// aby dziedziczyć properte Shape użwany extends
 class Circle extends Shape {
-    draw() {
-        console.log('draw');
+    move() {
+        super.move ();   // służy do wywołania kodu z konstruktora klasy którą rozszerzamy.
+        console.log('circle move');
     }
 }
 
-const c = new Circle();
+const c = new Circle(); 
