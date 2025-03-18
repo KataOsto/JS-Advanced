@@ -218,3 +218,5 @@ class Circle extends Shape {
 }
 
 const c = new Circle(); 
+
+// 10 - Cheat Sheet
