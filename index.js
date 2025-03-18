@@ -203,6 +203,7 @@
 
 // 9 - Method Overriding - Aby zastąpić metodę, nadajemy jej taką samą nazwę i parametry, jak metodzie w superklasie
 
+
 class Shape {
     move() {
         console.log('move');
