@@ -7,7 +7,6 @@
 
 // Benefits of Modulariy- Maintainability, Reuse, Abstract
 
-
 const _radius = new WeakMap();
 
 class Circle {
