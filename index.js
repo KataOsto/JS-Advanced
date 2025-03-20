@@ -40,8 +40,18 @@
 // Cohesion - Spójnosć / W programowaniu komputerowym spójność odnosi się do stopnia, 
 // w jakim elementy wewnątrz modułu są ze sobą powiązane
 
-const Circle = require('./circle');
+// const Circle = require('./circle');
+
+// const c = new Circle(10);
+// c.draw();
+
+
+
+// 3 - ES6 Modules
+
+// We use the export and import 
+
+import { Circle } from "./circle.js";
 
 const c = new Circle(10);
 c.draw();
-
